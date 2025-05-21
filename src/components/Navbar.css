@@ -1,0 +1,206 @@
+/* Fondo personalizado del navbar */
+.custom-navbar {
+    background-color: rgb(39, 10, 10) !important;
+    padding: 0.5rem 1rem;
+}
+
+/* Ícono hamburguesa blanco */
+.btn-outline-light {
+    color: rgb(240, 225, 194) !important;
+    border: #f0e1c2;
+    font-size: 22px;
+    position: relative;
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    /* 🎯 Estas dos líneas simulan grosor */
+    text-shadow: 0 0 10px #121010, 0 0 10px rgba(64, 24, 24, 0.07);
+    font-weight: bold;
+    background-color: #f0e1c2;
+}
+
+.navbar-toggler {
+    border: none;
+}
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 54px;
+    left: -250px;
+    width: 200px;
+    height: 50vh;
+    background-color: rgba(64, 24, 24, 0.41);
+    padding: 2rem 1rem;
+    transition: left 0.3s ease;
+    z-index: 1050;
+}
+
+.sidebar.show {
+    left: 0;
+}
+
+.sidebar .nav-link {
+    color: #f0e1c2 !important;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-transform: uppercase;            /* Mayúsculas */
+    font-family: 'Poppins', sans-serif;  /* Fuente personalizada */
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgb(32, 91, 115);
+    border-radius: 5px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1049;
+    display: none;
+}
+/* Carrito: siempre visible y bien alineado */
+.btn-outline-light {
+    color: rgb(18, 16, 16) !important;
+    border: none;
+    font-size: 22px;
+    position: relative;
+    .cart-button {
+        background-color: transparent;
+        border: 2px solid #121010; /* Cambia el grosor y color del borde */
+        padding: 10px 12px;
+        border-radius: 10px; /* Bordes redondeados */
+        transition: all 0.3s ease;
+        color: #121010;
+    }
+
+    .cart-button i {
+        font-size: 50px; /* Tamaño del ícono del carrito */
+    }
+
+    .cart-button:hover {
+        background-color: #121010;
+        color: #f0e1c2;
+        border-color: #f0e1c2;
+    }
+}
+.btn-outline-light .badge {
+    font-size: 12px;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+.overlay.show {
+    display: #f0e1c2
+}
+.cart-button {
+    background-color: transparent;
+    border: 2px solid rgb(240, 225, 194); /* Cambia el grosor y color del borde */
+    padding: 5px 10px;
+    border-radius: 10px; /* Bordes redondeados */
+    transition: all 0.3s ease;
+    color: #f0e1c2;
+}
+
+.cart-button i {
+    font-size: 22px; /* Tamaño del ícono del carrito */
+}
+
+.cart-button:hover {
+    background-color: #205b73;
+    color: #000000;
+    border-color: #f0e1c2;
+}
+.mini-cart-dropdown {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+
+.cart-dropdown-wrapper {
+    position: relative;
+}
+
+.mini-cart-dropdown {
+    width: 300px;
+    background-color: rgba(39, 10, 10, 0.76);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgb(32, 91, 115);
+    font-family: 'Segoe UI', sans-serif;
+    z-index: 1000;
+}
+
+.mini-cart-dropdown h6 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.mini-cart-qty {
+    font-size: 1.1rem;
+}
+
+.mini-cart-item {
+    margin-bottom: 1rem;
+}
+
+.mini-cart-item span {
+    font-size: 0.95rem;
+}
+
+.mini-cart-controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.btn-light {
+    background-color: #205b73;
+    border: 1px solid #205b73;
+    border-radius: 6px;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+}
+
+.btn-light:hover {
+    background-color: #f1f1f1;
+}
+
+.mini-cart-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.mini-cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 250px;
+    overflow-y: auto;
+}

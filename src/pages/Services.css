@@ -1,0 +1,91 @@
+/* Sección con imagen de fondo a pantalla completa */
+.servicios-section {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 60px 0;
+    position: relative;
+    color: rgba(64, 24, 24, 0.94);
+}
+
+/* Fondo container semi-transparente */
+.servicios-section .container {
+    background-color: rgba(240, 225, 194, 0.5); /* tono cálido, más transparente */
+    padding: 50px 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+}
+
+/* Tipografía general */
+body, .servicio-card, .servicio-card p, .servicio-card h5 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Título principal */
+.servicios-section h1 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    color: rgba(64, 24, 24, 0.99);
+}
+
+/* Subtítulo */
+.servicios-section p.subtitulo {
+    color: rgba(64, 24, 24, 0.94);
+    font-size: 1.1rem;
+}
+
+/* Tarjetas */
+.servicio-card {
+    background: rgba(64, 24, 24, 0.81);
+    border: 1px solid rgb(190, 107, 57);
+    box-shadow: 0 8px 32px 0 rgb(190, 107, 57);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 20px;
+    color: rgba(64, 24, 24, 0.94);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(32, 91, 115, 0.5);
+}
+
+/* Icono de servicio */
+.servicios-section .icono-servicio {
+    font-size: 2.8rem;
+    color: #401818;
+}
+
+/* Títulos de las tarjetas */
+.servicios-section .servicio-card h5.card-title {
+    font-size: 1.2rem;
+    color: rgb(190, 107, 57);
+    text-transform: uppercase;
+}
+
+/* Texto de las tarjetas */
+.servicios-section .servicio-card p.card-text {
+    font-size: 0.95rem;
+    color: rgba(240, 225, 194, 0.76);
+}
+
+/* Botón personalizado */
+.servicio-btn {
+    background-color: rgba(64, 24, 24, 0.94);
+    color: #f0e1c2;
+    border: none;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.servicio-btn:hover {
+    background-color: #205b73;
+    color: #f0e1c2;
+}

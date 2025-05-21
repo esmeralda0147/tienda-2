@@ -1,0 +1,51 @@
+/* Cambia el color del fondo */
+.custom-navbar {
+    background-color: rgb(64, 24, 24) !important;
+}
+
+/* Estilos para los enlaces */
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+    font-family: 'Poppins', sans-serif;  /* Fuente personalizada */
+    font-size: 15px;                     /* Tamaño del texto */
+    font-weight: 300;                     /* Negrita */
+    color: #f0e1c2 !important;           /* Color del texto */
+    text-transform: uppercase;            /* Mayúsculas */
+    padding: 10px 15px;                   /* Espaciado */
+}
+
+/* Cambia el color al pasar el mouse */
+.custom-navbar .nav-link:hover {
+    color: #f0e1c2 !important;  /* Amarillo */
+}
+
+/* Cambia el color del botón de hamburguesa */
+.custom-navbar .navbar-toggler {
+    color: #f0e1c2;
+    border: 2px solid rgb(240, 225, 194); /* Cambia el grosor y color del borde */
+    background-color: rgba(64, 24, 24, 0.37) !important;
+    .social-icons i:hover {
+        color: #f0e1c2;            /* 🌈 CAMBIA color al hacer hover */
+    }
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");  /* para cambiar las lineas de los iconos esta inverso el color  */
+
+    }
+
+    /* 🎯 Estas dos líneas simulan grosor */
+text-shadow: 0 0 10px #f3f1ec, 0 0 10px rgb(240, 225, 194);
+font-weight: bold;
+background-color: #f0e1c2;
+}
+/* Lista de ítems sin fondo */
+.mi-navbar .navbar-nav {
+    background-color: #205b73 !important;
+    padding-left: 2rem;
+    padding-right: 1rem;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); /* Invierte colores (útil si el fondo es oscuro) */
+    background-color: transparent !important; /* Hace el fondo transparente */;
+
+}

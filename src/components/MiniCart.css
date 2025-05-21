@@ -1,0 +1,67 @@
+.mini-cart-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 320px;
+    background-color: #f0e1c2;
+    color: #121010;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgb(190, 107, 57);
+    z-index: 1050;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+.mini-cart-title {
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #205b73;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.mini-cart-item {
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-name {
+    font-weight: 500;
+}
+
+.item-total-price {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.unit-price {
+    color: rgba(39, 10, 10, 0.76);
+    font-size: 12px;
+}
+
+.quantity-controls button {
+    font-size: 12px;
+    padding: 2px 8px;
+}
+
+.total-section {
+    font-size: 15px;
+    font-weight: 600;
+}
+.mini-cart-dropdown .custom-cart-btn {
+    background-color: #205b73;
+    color: #f0e1c2;
+}

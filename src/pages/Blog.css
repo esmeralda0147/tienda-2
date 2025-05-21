@@ -1,0 +1,178 @@
+/* Fondo general para ambas páginas */
+.blog-container, .article-detail-container {
+    min-height: 100vh;
+    width: 100%;
+    padding: 4rem 2rem;
+    background: url('/src/assets/fondo.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    font-family: 'Poppins', sans-serif;
+    color: #4E342E;
+}
+
+/* Contenido del Blog */
+.blog-content {
+    width: 100%;
+    max-width: 1200px;
+    background: #f0e1c2;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Título principal del blog */
+.blog-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Grid de artículos */
+.articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Tarjeta de artículo */
+.article-card {
+    background: rgba(190, 107, 57, 0.32);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Imagen del artículo */
+.article-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Título del artículo */
+.article-title {
+    font-size: 1.6rem;
+    margin: 1rem;
+    font-weight: 600;
+}
+
+/* Resumen */
+.article-summary {
+    font-size: 1rem;
+    color: #5D4037;
+    margin: 0 1rem 1rem 1rem;
+}
+
+/* Botón leer más */
+.read-more-box {
+    background-color: rgba(64, 24, 24, 0.94);
+    margin: 1rem auto;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.read-more {
+    color: #f0e1c2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ------------------ */
+/* Página individual de artículo */
+/* ------------------ */
+
+.article-detail-content {
+    background: #f0e1c2;
+    padding: 3rem 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Título del detalle */
+.detail-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #3E2723;
+    text-transform: uppercase;
+}
+
+/* Imagen destacada */
+.detail-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+/* Contenido detallado */
+.detail-content {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: #4E342E;
+}
+
+/* Párrafos */
+.detail-content p {
+    margin-bottom: 1.8rem;
+    text-align: justify;
+}
+
+/* Subtítulos dentro del contenido */
+.detail-content h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #5D4037;
+    border-left: 5px solid #be6b39;
+    padding-left: 1rem;
+}
+
+/* Links dentro del contenido */
+.detail-content a {
+    color: #205b73;
+    text-decoration: underline;
+}
+
+/* Botón para volver */
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: #205b73;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+}
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* ------------------ */
+/* Responsive */
+/* ------------------ */
+
+@media (max-width: 768px) {
+    .article-image, .detail-image {
+        height: 250px;
+    }
+    .detail-title {
+        font-size: 2rem;
+    }
+    .blog-title {
+        font-size: 2.2rem;
+    }
+}
