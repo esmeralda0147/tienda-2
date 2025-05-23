@@ -52,8 +52,18 @@
 }
 
 /* Menú desplegable */
-.collapse.show {
-    display: block !important;
+.navbar-collapse {
+    transition: max-height 0.3s ease;
+}
+
+.navbar-collapse:not(.show) {
+    max-height: 0;
+    overflow: hidden;
+}
+
+.navbar-collapse.show {
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 /* Carrito de compras */
@@ -157,6 +167,15 @@
 @media (max-width: 768px) {
     .custom-navbar {
         padding: 0.5rem 0;
+    }
+
+    .navbar-collapse {
+        position: fixed;
+        top: 54px;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        padding: 1rem;
     }
 
     .mini-cart-dropdown {
@@ -322,7 +341,7 @@
 }
 
 .overlay.show {
-    display: #f0e1c2
+    display: block;
 }
 
 .btn-outline-light {
