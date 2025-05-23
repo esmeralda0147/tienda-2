@@ -32,8 +32,6 @@ const Store = () => {
                 <div className="product-grid">
                     {products.map((product) => {
                         const basePrice = product.options ? Math.min(...product.options.map(opt => opt.price)) : product.price;
-                        const defaultOption = product.options ? product.options[0] : null;
-
                         return (
                             <div className="product-card" key={product.id}>
                                 <Link to={`/store/${product.id}`}>

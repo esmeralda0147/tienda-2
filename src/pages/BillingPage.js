@@ -17,7 +17,7 @@ const BillingPage = () => {
         codigoPostal: '',
         cupon: '',
     });
-    const [envio, setEnvio] = useState(12000);
+    const [envio] = useState(0); // si no usas setEnvio
     const [descuento, setDescuento] = useState(0);
     const navigate = useNavigate();
 
