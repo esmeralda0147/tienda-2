@@ -9,9 +9,14 @@ import './Store.css';
 const Store = () => {
     const { addToCart } = useCart();
     const [quantities, setQuantities] = useState({});
+    const [selectedOptions, setSelectedOptions] = useState({});
 
     const handleQuantityChange = (productId, value) => {
         setQuantities({ ...quantities, [productId]: parseInt(value) });
+    };
+
+    const handleSelectedOptionChange = (productId, value) => {
+        setSelectedOptions({ ...selectedOptions, [productId]: value });
     };
 
     return (
@@ -41,9 +46,42 @@ const Store = () => {
                                 <p className="product-price">Desde ${basePrice.toLocaleString()}</p>
 
                                 {product.options ? (
-                                    <Link to={`/store/${product.id}`} className="view-product-btn">
-                                        Ver producto
-                                    </Link>
+                                    <div className="product-options">
+                                        <select
+                                            className="option-select"
+                                            onChange={(e) => handleSelectedOptionChange(product.id, e.target.value)}
+                                            value={selectedOptions[product.id] || ''}
+                                        >
+                                            <option value="">Selecciona una opción</option>
+                                            {product.options.map((option, index) => (
+                                                <option key={index} value={JSON.stringify(option)}>
+                                                    {option.name} - ${option.price}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        <div className="quantity-wrapper">
+                                            <input
+                                                type="number"
+                                                min="1"
+                                                value={quantities[product.id] || 1}
+                                                onChange={(e) => handleQuantityChange(product.id, e.target.value)}
+                                                className="quantity-input"
+                                            />
+                                            <button
+                                                className="add-to-cart-btn"
+                                                onClick={() => {
+                                                    const selectedOption = selectedOptions[product.id];
+                                                    if (selectedOption) {
+                                                        addToCart(product, quantities[product.id] || 1, JSON.parse(selectedOption));
+                                                    } else {
+                                                        alert('Por favor, selecciona una opción antes de agregar al carrito');
+                                                    }
+                                                }}
+                                            >
+                                                Agregar al carrito
+                                            </button>
+                                        </div>
+                                    </div>
                                 ) : (
                                     <div className="quantity-wrapper">
                                         <input
@@ -55,9 +93,7 @@ const Store = () => {
                                         />
                                         <button
                                             className="add-to-cart-btn"
-                                            onClick={() =>
-                                                addToCart(product, quantities[product.id] || 1)
-                                            }
+                                            onClick={() => addToCart(product, quantities[product.id] || 1)}
                                         >
                                             Agregar al carrito
                                         </button>

@@ -12,10 +12,10 @@ const Cart = () => {
         localStorage.setItem('cart', JSON.stringify(cartItems));
     }, [cartItems]);
 
-    const handleQuantityChange = (id, event) => {
+    const handleQuantityChange = (id, event, selectedOption) => {
         const newQuantity = parseInt(event.target.value);
         if (!isNaN(newQuantity) && newQuantity > 0) {
-            updateQuantity(id, newQuantity);
+            updateQuantity(id, newQuantity, selectedOption);
         }
     };
 
@@ -44,18 +44,24 @@ const Cart = () => {
                                     <img src={item.image} alt={item.name} />
                                     <div className="item-details">
                                         <h4>{item.name}</h4>
+                                        {item.selectedOption && (
+                                            <p className="option-info">
+                                                Opción: {item.selectedOption.name} - 
+                                                Precio adicional: ${item.selectedOption.price}
+                                            </p>
+                                        )}
                                         <p>Cantidad:
                                             <input
                                                 type="number"
                                                 min="1"
                                                 value={item.quantity}
-                                                onChange={(e) => handleQuantityChange(item.id, e)}
+                                                onChange={(e) => handleQuantityChange(item.id, e, item.selectedOption)}
                                                 className="quantity-input"
                                             />
                                         </p>
                                         <p>Precio unitario: ${item.price.toFixed(2)}</p>
                                         <p>Total: ${(item.price * item.quantity).toFixed(2)}</p>
-                                        <button onClick={() => removeFromCart(item.id)} className="remove-button">
+                                        <button onClick={() => removeFromCart(item.id, item.selectedOption)} className="remove-button">
                                             Eliminar
                                         </button>
                                     </div>

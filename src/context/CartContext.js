@@ -34,56 +34,80 @@ export const CartProvider = ({ children }) => {
     }, [cartItems, isCartInitialized]);
 
     // Agregar un producto al carrito
-    const addToCart = (product, quantity = 1) => {
+    const addToCart = (product, quantity = 1, selectedOption = null) => {
         if (!product || !product.id || quantity <= 0) return;
 
         setCartItems(prevItems => {
-            const existingItem = prevItems.find(item => item.id === product.id);
+            const existingItem = prevItems.find(item => 
+                item.id === product.id && 
+                (!selectedOption || item.selectedOption === selectedOption)
+            );
+            
             if (existingItem) {
                 return prevItems.map(item =>
-                    item.id === product.id
+                    item.id === product.id && 
+                    (!selectedOption || item.selectedOption === selectedOption)
                         ? { ...item, quantity: item.quantity + quantity }
                         : item
                 );
             } else {
-                return [...prevItems, { ...product, quantity }];
+                const itemToAdd = {
+                    ...product,
+                    quantity,
+                    selectedOption,
+                    price: selectedOption ? selectedOption.price : product.price
+                };
+                return [...prevItems, itemToAdd];
             }
         });
     };
 
     // Eliminar un producto del carrito
-    const removeFromCart = (id) => {
-        setCartItems(prevItems => prevItems.filter(item => item.id !== id));
+    const removeFromCart = (id, selectedOption = null) => {
+        setCartItems(prevItems => 
+            prevItems.filter(item => 
+                !(item.id === id && (!selectedOption || item.selectedOption === selectedOption))
+            )
+        );
     };
 
     // Actualizar la cantidad de un producto en el carrito
-    const updateQuantity = (id, newQuantity) => {
+    const updateQuantity = (id, newQuantity, selectedOption = null) => {
         if (newQuantity <= 0) {
-            removeFromCart(id);
+            removeFromCart(id, selectedOption);
         } else {
             setCartItems(prevItems =>
                 prevItems.map(item =>
-                    item.id === id ? { ...item, quantity: newQuantity } : item
+                    item.id === id && 
+                    (!selectedOption || item.selectedOption === selectedOption)
+                        ? { ...item, quantity: newQuantity }
+                        : item
                 )
             );
         }
     };
 
     // Incrementar la cantidad de un producto en el carrito
-    const increaseQuantity = (id) => {
+    const increaseQuantity = (id, selectedOption = null) => {
         setCartItems(prevItems =>
             prevItems.map(item =>
-                item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+                item.id === id && 
+                (!selectedOption || item.selectedOption === selectedOption)
+                    ? { ...item, quantity: item.quantity + 1 }
+                    : item
             )
         );
     };
 
     // Decrementar la cantidad de un producto en el carrito
-    const decreaseQuantity = (id) => {
+    const decreaseQuantity = (id, selectedOption = null) => {
         setCartItems(prevItems =>
             prevItems
                 .map(item =>
-                    item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+                    item.id === id && 
+                    (!selectedOption || item.selectedOption === selectedOption)
+                        ? { ...item, quantity: item.quantity - 1 }
+                        : item
                 )
                 .filter(item => item.quantity > 0)  // Elimina los productos con cantidad 0
         );
@@ -124,5 +148,3 @@ export const CartProvider = ({ children }) => {
         </CartContext.Provider>
     );
 };
-
-
