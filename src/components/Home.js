@@ -5,7 +5,7 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div className="home-container" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div className="home-container" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: 0 }}>
             <div className="hero-section">
                 <div className="hero-background" style={{ backgroundImage: `url(${background})`, height: '100vh', width: '100vw' }}></div>
                 <div className="hero-content" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>

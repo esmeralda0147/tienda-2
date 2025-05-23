@@ -91,7 +91,7 @@ const Navbar = () => {
                         </li>
                     </ul>
 
-                    <div className="cart-dropdown-wrapper position-relative">
+                    <div className="cart-dropdown-wrapper d-flex align-items-center">
                         <button 
                             className="btn btn-link text-white text-decoration-none position-relative"
                             onClick={() => setShowMiniCart(!showMiniCart)}

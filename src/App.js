@@ -25,7 +25,7 @@ const App = () => {
             <Router>
                 <div className="app-container">
                     <Navbar />
-                    <main style={{ paddingTop: '60px' }}>
+                    <main style={{ paddingTop: '54px' }}>
                         <Routes>
                             <Route path="/" element={<Home />} />
                             <Route path="/store" element={<Store />} />
