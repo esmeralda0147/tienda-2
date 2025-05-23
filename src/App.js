@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavigationBar from './components/Navbar';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { CartProvider } from './context/CartContext';
 
@@ -24,7 +24,7 @@ const App = () => {
         <CartProvider>
             <Router>
                 <div className="app-container">
-                    <NavigationBar />
+                    <Navbar />
                     <main style={{ paddingTop: '60px' }}>
                         <Routes>
                             <Route path="/" element={<Home />} />
@@ -36,8 +36,6 @@ const App = () => {
                             <Route path="/about" element={<AboutUs />} />
                             <Route path="/services" element={<Servicios />} />
                             <Route path="/contacto" element={<Contact />} />
-
-                            {/* ✅ Nuevas rutas para Blog */}
                             <Route path="/blog" element={<Blog />} />
                             <Route path="/blog/:id" element={<ArticleDetail />} />
                         </Routes>
