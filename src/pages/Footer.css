@@ -1,0 +1,51 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent; /* 🎨 CAMBIA el color de fondo */
+    padding: 0.1px 0;           /* ⬆️⬇️ CAMBIA el alto del footer */
+    font-family: 'Poppins', sans-serif; /* 🔤 CAMBIA la fuente */
+    font-size: 10px;           /* 🔠 CAMBIA tamaño del texto */
+    color: #f0e1c2;            /* ⚪ CAMBIA color del texto */
+    text-align: right;
+    z-index: 1000;
+}
+
+.social-icons i {
+    font-size: 20px;           /* 📏 CAMBIA tamaño de los íconos */
+    margin: 0 10px;
+    color: #f0e1c2;            /* 🎨 CAMBIA color de íconos */
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.social-icons i:hover {
+    color: #205b73;            /* 🌈 CAMBIA color al hacer hover */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 20px 0 10px 0;
+    margin: 0;
+}
+
+.footer-links li a {
+    color: #be6b39;            /* ⚪ CAMBIA color de enlaces */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #205b73;            /* 🌈 CAMBIA color hover de enlaces */
+}
+
+.footer p {
+    margin-top: 5px;
+    font-size: 0.70rem;
+    color: #f0e1c2;
+}
