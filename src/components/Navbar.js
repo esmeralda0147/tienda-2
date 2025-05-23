@@ -28,7 +28,7 @@ const Navbar = () => {
     const closeSidebar = () => setSidebarOpen(false);
 
     const handleMiniCartClick = (e) => {
-        e.stopPropagation(); // Evitar que el clic se propague y cierre el menú
+        e.stopPropagation();
         setShowMiniCart(!showMiniCart);
     };
 
@@ -43,9 +43,7 @@ const Navbar = () => {
                     aria-expanded={sidebarOpen}
                     aria-label="Toggle navigation"
                 >
-                    <span className="navbar-toggler-icon">
-                        <i className="bi bi-list"></i>
-                    </span>
+                    <i className="bi bi-list"></i>
                 </button>
 
                 <Link to="/" className="navbar-brand">
@@ -115,7 +113,7 @@ const Navbar = () => {
                             className="btn btn-link text-white text-decoration-none position-relative"
                             onClick={handleMiniCartClick}
                         >
-                            <i className="bi bi-cart fs-4"></i>
+                            <i className="bi bi-cart"></i>
                             {totalItems > 0 && (
                                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                     {totalItems}
