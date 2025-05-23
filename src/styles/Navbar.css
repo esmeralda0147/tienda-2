@@ -4,6 +4,7 @@
     --secondary-color: #205b73;
     --text-color: #f0e1c2;
     --background-color: #f5f5f5;
+    --transition: all 0.3s ease;
 }
 
 /* Estilos del navbar */
@@ -26,7 +27,8 @@
     padding: 0.5rem;
     border-radius: 4px;
     margin: 0 1rem 0 0;
-    transition: all 0.3s ease;
+    transition: var(--transition);
+    font-size: 1.2rem;
 }
 
 .navbar-toggler:hover {
@@ -36,6 +38,33 @@
 
 .navbar-toggler i {
     font-size: 1.2rem;
+}
+
+/* Logo y marca */
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color) !important;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+/* Enlaces de navegación */
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-color) !important;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--text-color) !important;
+    background-color: rgba(240, 225, 194, 0.1);
 }
 
 /* Carrito de compras */
@@ -51,7 +80,7 @@
 .cart-dropdown-wrapper i {
     font-size: 1.2rem;
     color: var(--text-color);
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .cart-dropdown-wrapper i:hover {
@@ -75,7 +104,7 @@
 
 /* Menu móvil */
 .navbar-collapse {
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+    transition: var(--transition);
     background-color: var(--primary-color);
     padding: 1rem 0;
     overflow: hidden;
@@ -84,15 +113,18 @@
 .navbar-collapse:not(.show) {
     max-height: 0;
     opacity: 0;
+    visibility: hidden;
 }
 
 .navbar-collapse.show {
     max-height: 100vh;
     opacity: 1;
+    visibility: visible;
 }
 
 .navbar-nav {
     width: 100%;
+    padding: 0 1rem;
 }
 
 .nav-item {
@@ -104,12 +136,31 @@
     text-align: left;
     padding: 0.75rem 1rem;
     border-radius: 4px;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .nav-link:hover {
     background-color: rgba(240, 225, 194, 0.2);
     transform: translateX(5px);
+}
+
+/* Mini carrito */
+.mini-cart-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    margin-top: 0.5rem;
+    display: none;
+    padding: 1rem;
+}
+
+.mini-cart-dropdown.show {
+    display: block;
 }
 
 /* Responsividad */
@@ -120,5 +171,11 @@
     
     .cart-dropdown-wrapper {
         margin-left: 0;
+    }
+    
+    .mini-cart-dropdown {
+        width: 100%;
+        right: 0;
+        left: 0;
     }
 }
